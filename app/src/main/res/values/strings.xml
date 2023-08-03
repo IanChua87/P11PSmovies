@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">My Movies - Insert Movie</string>
+    <string name="show_list">SHOW LIST</string>
+    <string name="insert">INSERT</string>
+    <string-array name="spinnerItems">
+        <item>G</item>
+        <item>PG</item>
+        <item>PG13</item>
+        <item>NC16</item>
+        <item>M18</item>
+        <item>R21</item>
+        <!-- Add more items as needed -->
+    </string-array>
+</resources>
