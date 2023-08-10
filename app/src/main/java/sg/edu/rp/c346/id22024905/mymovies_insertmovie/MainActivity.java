@@ -39,15 +39,20 @@ public class MainActivity extends AppCompatActivity {
                 String rating = spinnerRating.getSelectedItem().toString();
                 String movieTitle = etMovieTitle.getText().toString();
                 String genre = etGenre.getText().toString();
-                int year = Integer.parseInt(etYear.getText().toString());
-
-                if(movieTitle.isEmpty() || genre.isEmpty() || etYear.getText().toString().isEmpty()){
-                    Toast.makeText(MainActivity.this, "Song please insert movie details", Toast.LENGTH_SHORT).show();
-                    return;
+                int year = 0;
+                String yearString = etYear.getText().toString();
+                if(yearString.length() > 0){
+                    year = Integer.parseInt(yearString);
                 }
 
-                db.insertMovie(movieTitle, genre, year, rating);
-                Toast.makeText(MainActivity.this, "Movie has been added successfully", Toast.LENGTH_LONG).show();
+
+                if (movieTitle.isEmpty() || genre.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Song please insert movie details", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    db.insertMovie(movieTitle, genre, year, rating);
+                    Toast.makeText(MainActivity.this, "Movie has been added successfully", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
